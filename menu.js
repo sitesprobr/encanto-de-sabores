@@ -22,7 +22,7 @@ var data = {
     ["Brownie Biscoff", "", 18, "Captura%20de%20tela%202026-11-26%20212815.png"],
     ["Brownie Pistache", "", 18, "Captura%20de%20tela%202026-11-26%20212825.png"],
     ["Brownie Kinder Bueno", "", 16, "Captura%20de%20tela%202026-11-26%20212836.png"],
-    ["Brownie Ovomaltine", "", 18]
+    ["Brownie Ovomaltine", "", 18, "Captura%20de%20tela%202026-11-26%20212909.png"]
   ],
   copos: [
     ["Copo Ferrero", "", 18, "Captura%20de%20tela%202026-11-26%20212313.png"],
