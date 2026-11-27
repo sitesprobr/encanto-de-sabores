@@ -193,6 +193,10 @@
     <p class="cat-nota">Fofinho por dentro, irresistível 😍</p>
     <div id="brownie"></div>
 
+    <div class="cat-wrap"><div class="cat">🍪 Brookies</div></div>
+    <p class="cat-nota">Brownie + cookie numa mordida só 🤤</p>
+    <div id="brookies"></div>
+
     <div class="cat-wrap"><div class="cat">📦 Brownie Box</div></div>
     <p class="cat-nota">Caixas presenteáveis, sabores sortidos 🎁</p>
     <div id="box"></div>
@@ -257,6 +261,10 @@
     var PIX_TITULAR = "";
     var qty = {};
 
+    function fmt(v) {
+      return "R$ " + v.toFixed(2).replace(".", ",");
+    }
+
     (function () {
       var z = document.getElementById("zap-link");
       z.href = "https://wa.me/" + WHATS + "?text=" + encodeURIComponent("Olá! Vim pelo cardápio do Encanto de Sabores ✨ e gostaria de fazer um pedido.");
@@ -318,7 +326,7 @@
         var nm = document.createElement("div"); nm.className = "nome"; nm.textContent = n;
         wrap.appendChild(nm);
         var dline = document.createElement("div"); dline.className = "desc";
-        dline.innerHTML = (sub ? sub + " • " : "") + "<b>R$ " + preco + ",00</b>";
+        dline.innerHTML = (sub ? sub + " • " : "") + "<b>" + fmt(preco) + "</b>";
         wrap.appendChild(dline);
         esq.appendChild(wrap);
         var q = document.createElement("div"); q.className = "q";
@@ -349,7 +357,7 @@
         var corpo = document.createElement("div"); corpo.className = "box-corpo";
         var bEsq = document.createElement("div"); bEsq.className = "box-esq";
         var bn = document.createElement("div"); bn.className = "box-nome"; bn.textContent = n;
-        var bp = document.createElement("div"); bp.className = "box-preco"; bp.textContent = "R$ " + preco + ",00";
+        var bp = document.createElement("div"); bp.className = "box-preco"; bp.textContent = fmt(preco);
         bEsq.append(bn, bp);
         var bDir = document.createElement("div"); bDir.className = "box-dir";
         var bd = document.createElement("div"); bd.className = "box-desc"; bd.textContent = desc;
@@ -372,6 +380,7 @@
     render("coxinha", "coxinha", data.coxinha);
     render("salgados", "salgados", data.salgados);
     render("brownie", "brownie", data.brownie);
+    render("brookies", "brookies", data.brookies);
     renderBox("box", "box", data.box);
     render("copos", "copos", data.copos);
 
@@ -431,7 +440,7 @@
         box.appendChild(row);
       });
       var t = totalItens();
-      totalEl.textContent = "Total: " + t + " iten" + (t > 1 ? "s" : "") + " = R$ " + totalValor() + ",00";
+      totalEl.textContent = "Total: " + t + " iten" + (t > 1 ? "s" : "") + " = " + fmt(totalValor());
     }
 
     function abrirCarrinho() { renderCarrinho(); document.getElementById("overlay").classList.add("aberto"); document.getElementById("drawer").classList.add("aberto"); }
@@ -448,12 +457,12 @@
       for (var k in qty) {
         if (!qty[k].n) continue;
         var it = qty[k];
-        lines.push("• " + it.n + "x " + it.nome + (it.sub ? " (" + it.sub + ")" : "") + " — R$ " + (it.n * it.preco) + ",00");
+        lines.push("• " + it.n + "x " + it.nome + (it.sub ? " (" + it.sub + ")" : "") + " — " + fmt(it.n * it.preco));
       }
       var nome = val("c-nome"), tel = val("c-tel"), end = val("c-end"), obs = val("c-obs");
       var t = totalItens();
       var msg = "Olá! Gostaria de fazer um pedido no Encanto de Sabores ✨:\n" + lines.join("\n");
-      msg += "\n\nTotal: " + t + " iten" + (t > 1 ? "s" : "") + " = R$ " + totalValor() + ",00";
+      msg += "\n\nTotal: " + t + " iten" + (t > 1 ? "s" : "") + " = " + fmt(totalValor());
       if (nome) msg += "\nNome: " + nome;
       if (tel) msg += "\nTelefone: " + tel;
       if (end) msg += "\nEndereço: " + end;
