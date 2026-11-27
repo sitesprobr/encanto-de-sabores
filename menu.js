@@ -15,6 +15,14 @@ var data = {
     ["Croissant de frango com requeijão", "", 16, "Captura%20de%20tela%202026-11-26%20212535.png"],
     ["Pão de queijo", "unidade", 6, "Captura%20de%20tela%202026-11-26%20212737.png"]
   ],
+  brownie: [
+    ["Brownie Nutella com Morango", "", 18],
+    ["Brownie Ninho, Nutella e Morango", "", 18],
+    ["Brownie Ninho com Nutella", "", 16],
+    ["Brownie Biscoff", "", 18],
+    ["Brownie Pistache", "", 18],
+    ["Brownie Kinder Bueno", "", 16]
+  ],
   copos: [
     ["Copo Ferrero", "", 18, "Captura%20de%20tela%202026-11-26%20212313.png"],
     ["Copo Tropical", "", 16, "Captura%20de%20tela%202026-11-26%20212326.png"],
