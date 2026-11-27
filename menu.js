@@ -24,6 +24,10 @@ var data = {
     ["Brownie Kinder Bueno", "", 16, "Captura%20de%20tela%202026-11-26%20212836.png"],
     ["Brownie Ovomaltine", "", 18, "Captura%20de%20tela%202026-11-26%20212909.png"]
   ],
+  box: [
+    ["Box 9 Brownies", "9 brownies sortidos • embalagem presenteável", 130, ""],
+    ["Box 6 Brownies", "6 brownies sortidos • embalagem presenteável", 90, ""]
+  ],
   copos: [
     ["Copo Ferrero", "", 18, "Captura%20de%20tela%202026-11-26%20212313.png"],
     ["Copo Tropical", "", 16, "Captura%20de%20tela%202026-11-26%20212326.png"],
