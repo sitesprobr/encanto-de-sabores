@@ -75,6 +75,11 @@
     .cat-wrap { text-align: center }
     .cat-nota { color: var(--muted); font-size: 13px; font-weight: 600; margin: 4px 0 14px }
 
+    .galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0 0 16px }
+    .galeria img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); cursor: pointer; box-shadow: 0 3px 10px rgba(161,91,212,.1); transition: transform .2s ease }
+    .galeria img:hover { transform: scale(1.04) }
+    @media (max-width: 420px) { .galeria { grid-template-columns: repeat(2, 1fr) } }
+
     .item { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; margin-bottom: 11px; display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 3px 12px rgba(161,91,212,.08); transition: transform .2s ease, box-shadow .2s ease }
     .item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(161,91,212,.16) }
     .item .esq { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0 }
@@ -161,6 +166,12 @@
 
     <div class="cat-wrap"><div class="cat">🍗 Coxinha</div></div>
     <p class="cat-nota">Porção de 350g 💛</p>
+    <div class="galeria">
+      <img src="Captura%20de%20tela%202026-11-26%20212428.png" alt="Coxinha" loading="lazy" onclick="abrirImagem('Captura%20de%20tela%202026-11-26%20212428.png')">
+      <img src="Captura%20de%20tela%202026-11-26%20212441.png" alt="Coxinha" loading="lazy" onclick="abrirImagem('Captura%20de%20tela%202026-11-26%20212441.png')">
+      <img src="Captura%20de%20tela%202026-11-26%20212455.png" alt="Coxinha" loading="lazy" onclick="abrirImagem('Captura%20de%20tela%202026-11-26%20212455.png')">
+      <img src="Captura%20de%20tela%202026-11-26%20212751.png" alt="Coxinha" loading="lazy" onclick="abrirImagem('Captura%20de%20tela%202026-11-26%20212751.png')">
+    </div>
     <div id="coxinha"></div>
 
     <div class="cat-wrap"><div class="cat">🥤 Copo da Felicidade</div></div>
