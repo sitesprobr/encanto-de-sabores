@@ -11,9 +11,9 @@ var data = {
     ["Coxinha de carne seca c/ cream cheese", "350g", 22]
   ],
   salgados: [
-    ["Tapioca de frango com cream cheese", "", 18],
-    ["Croissant de frango com requeijão", "", 16],
-    ["Pão de queijo", "unidade", 6]
+    ["Tapioca de frango com cream cheese", "", 18, "Captura%20de%20tela%202026-11-26%20212524.png"],
+    ["Croissant de frango com requeijão", "", 16, "Captura%20de%20tela%202026-11-26%20212535.png"],
+    ["Pão de queijo", "unidade", 6, "Captura%20de%20tela%202026-11-26%20212737.png"]
   ],
   copos: [
     ["Copo Ferrero", "", 18, "Captura%20de%20tela%202026-11-26%20212313.png"],
