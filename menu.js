@@ -47,8 +47,8 @@ var data = {
     ["Copo Kinder com Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212411.png"],
     ["Copo Kinder", "", 18, "Captura%20de%20tela%202026-11-26%20212513.png"],
     ["Copo Merengue de Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212656.png"],
-    ["Copo Bombom de Morango", "", 18],
-    ["Copo Bombom de Uva", "", 18]
+    ["Copo Bombom de Morango", "", 18, "Captura%20de%20tela%202026-11-26%20234550.png"],
+    ["Copo Bombom de Uva", "", 18, "Captura%20de%20tela%202026-11-26%20234550.png"]
   ],
   bebidas: [
     ["Refri lata", "consultar disponibilidade no WhatsApp 💬", 8]
