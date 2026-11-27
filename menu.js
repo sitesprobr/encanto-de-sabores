@@ -28,6 +28,9 @@ var data = {
   brookies: [
     ["Brookie", "brownie + cookie 😍", 21.90, "Captura%20de%20tela%202026-11-26%20212707.png"]
   ],
+  bolo: [
+    ["Fatia de Bolo", "500g • consultar sabor do dia no WhatsApp 💬", 25]
+  ],
   box: [
     ["Box 9 Brownies", "9 brownies sortidos • embalagem presenteável", 130, "Captura%20de%20tela%202026-11-26%20223639.png"],
     ["Box 6 Brownies", "6 brownies sortidos • embalagem presenteável", 90, ""]
