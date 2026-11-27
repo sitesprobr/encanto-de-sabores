@@ -23,7 +23,7 @@ var data = {
     ["Brownie Pistache", "", 18, "Captura%20de%20tela%202026-11-26%20212825.png"],
     ["Brownie Kinder Bueno", "", 16, "Captura%20de%20tela%202026-11-26%20212836.png"],
     ["Brownie Ovomaltine", "", 18, "Captura%20de%20tela%202026-11-26%20212909.png"],
-    ["Fatia de Brownie com Biscoff", "fatia generosa", 25]
+    ["Fatia de Brownie com Biscoff", "fatia generosa", 25, "Captura%20de%20tela%202026-11-26%20212601.png"]
   ],
   box: [
     ["Box 9 Brownies", "9 brownies sortidos • embalagem presenteável", 130, "Captura%20de%20tela%202026-11-26%20223639.png"],
