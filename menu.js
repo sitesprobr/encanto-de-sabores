@@ -25,7 +25,7 @@ var data = {
     ["Brownie Ovomaltine", "", 18, "Captura%20de%20tela%202026-11-26%20212909.png"]
   ],
   box: [
-    ["Box 9 Brownies", "9 brownies sortidos • embalagem presenteável", 130, ""],
+    ["Box 9 Brownies", "9 brownies sortidos • embalagem presenteável", 130, "Captura%20de%20tela%202026-11-26%20223639.png"],
     ["Box 6 Brownies", "6 brownies sortidos • embalagem presenteável", 90, ""]
   ],
   copos: [
