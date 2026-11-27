@@ -9,5 +9,14 @@ var data = {
     ["Coxinha de frango c/ cream cheese", "350g", 18],
     ["Coxinha de costela c/ cream cheese", "350g", 22],
     ["Coxinha de carne seca c/ cream cheese", "350g", 22]
+  ],
+  copos: [
+    ["Copo Ferrero", "", 18],
+    ["Copo Tropical", "", 16],
+    ["Copo Crunch Cake", "", 16],
+    ["Copo Pavetone", "", 16],
+    ["Copo Kinder com Morango", "", 18],
+    ["Copo Kinder", "", 18],
+    ["Copo Merengue de Morango", "", 18]
   ]
 };
