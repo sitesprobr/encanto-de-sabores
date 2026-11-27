@@ -209,6 +209,10 @@
     <p class="cat-nota">Pura felicidade em cada colherada ✨</p>
     <div id="copos"></div>
 
+    <div class="cat-wrap"><div class="cat">🥤 Bebidas</div></div>
+    <p class="cat-nota">Consulte a disponibilidade no WhatsApp 💬</p>
+    <div id="bebidas"></div>
+
     <div class="pix" id="pix-box">
       <p class="pix-tit">💳 Pagamento via Pix</p>
       <p class="pix-sub">Faça o pedido, copie a chave e envie o comprovante no WhatsApp ✨</p>
@@ -388,6 +392,7 @@
     render("bolo", "bolo", data.bolo);
     renderBox("box", "box", data.box);
     render("copos", "copos", data.copos);
+    render("bebidas", "bebidas", data.bebidas);
 
     (function () {
       var els = document.querySelectorAll(".reveal");
