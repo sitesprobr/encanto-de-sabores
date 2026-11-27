@@ -77,7 +77,9 @@
 
     .item { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; margin-bottom: 11px; display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 3px 12px rgba(161,91,212,.08); transition: transform .2s ease, box-shadow .2s ease }
     .item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(161,91,212,.16) }
-    .item .esq { flex: 1; min-width: 0 }
+    .item .esq { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0 }
+    .item .thumb { width: 60px; height: 60px; border-radius: 14px; object-fit: cover; flex: none; border: 1px solid var(--line); cursor: pointer; background: #faf3fd }
+    .item .nome-wrap { flex: 1; min-width: 0 }
     .item .nome { font-weight: 700; font-size: 16.5px; color: var(--ink) }
     .item .desc { color: var(--muted); font-size: 13px }
     .item .desc b { color: var(--accent); font-weight: 800 }
@@ -130,6 +132,11 @@
     .drawer-dados input { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); font: 500 15px inherit; padding: 11px }
     .drawer-rodape { padding: 14px 20px calc(16px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line) }
     .drawer-rodape .btn { width: 100%; border: 0; border-radius: 999px; background: #25d366; color: #fff; font: 700 17px inherit; padding: 14px; cursor: pointer }
+
+    .lightbox { position: fixed; inset: 0; z-index: 40; background: rgba(40,20,50,.85); display: none; align-items: center; justify-content: center; padding: 20px }
+    .lightbox.aberto { display: flex }
+    .lightbox img { max-width: 95vw; max-height: 90vh; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,.5) }
+    .lightbox .fechar-lb { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(255,255,255,.9); color: #333; font: 700 22px/1 inherit; cursor: pointer }
 
     @media (prefers-reduced-motion: reduce) {
       .brilhos, .bar button, .logo { animation: none !important }
@@ -203,6 +210,11 @@
     </div>
   </aside>
 
+  <div class="lightbox" id="lightbox">
+    <button class="fechar-lb" id="fechar-lb" aria-label="Fechar imagem">✕</button>
+    <img id="lightbox-img" src="" alt="Foto ampliada">
+  </div>
+
   <script src="menu.js"></script>
   <script>
     var WHATS = "0000000000";
@@ -248,21 +260,33 @@
       }
     })();
 
+    function abrirImagem(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").classList.add("aberto");
+    }
+
     function keyOf(cat, i) { return cat + "#" + i; }
 
     function render(id, cat, list) {
       var box = document.getElementById(id);
       if (!box || !list) return;
       list.forEach(function (it, i) {
-        var n = it[0], sub = it[1] || "", preco = it[2];
+        var n = it[0], sub = it[1] || "", preco = it[2], img = it[3] || "";
         var key = keyOf(cat, i);
         var card = document.createElement("div"); card.className = "item reveal";
         var esq = document.createElement("div"); esq.className = "esq";
+        if (img) {
+          var im = document.createElement("img"); im.className = "thumb"; im.src = img; im.alt = n; im.loading = "lazy";
+          im.onclick = function () { abrirImagem(img); };
+          esq.appendChild(im);
+        }
+        var wrap = document.createElement("div"); wrap.className = "nome-wrap";
         var nm = document.createElement("div"); nm.className = "nome"; nm.textContent = n;
-        esq.appendChild(nm);
+        wrap.appendChild(nm);
         var dline = document.createElement("div"); dline.className = "desc";
         dline.innerHTML = (sub ? sub + " • " : "") + "<b>R$ " + preco + ",00</b>";
-        esq.appendChild(dline);
+        wrap.appendChild(dline);
+        esq.appendChild(wrap);
         var q = document.createElement("div"); q.className = "q";
         var minus = document.createElement("button"); minus.textContent = "−"; minus.hidden = true;
         var out = document.createElement("output"); out.hidden = true;
@@ -287,6 +311,9 @@
       }, { threshold: .1 });
       els.forEach(function (e) { obs.observe(e); });
     })();
+
+    document.getElementById("fechar-lb").onclick = function () { document.getElementById("lightbox").classList.remove("aberto"); };
+    document.getElementById("lightbox").onclick = function (e) { if (e.target.id === "lightbox") this.classList.remove("aberto"); };
 
     function totalItens() { var t = 0; for (var k in qty) t += qty[k].n; return t; }
     function totalValor() { var v = 0; for (var k in qty) v += qty[k].n * qty[k].preco; return v; }
