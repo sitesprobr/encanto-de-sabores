@@ -64,6 +64,11 @@
       filter: drop-shadow(0 2px 4px rgba(161,91,212,.25));
     }
     .tag { color: var(--muted); margin: 8px 0 0; font-weight: 700; letter-spacing: .3px }
+    .aviso-retirada {
+      display: inline-block; margin: 14px auto 0; background: #fbe9f3; border: 1px solid var(--accent2);
+      color: var(--accent); font-weight: 700; font-size: 13.5px; padding: 9px 18px; border-radius: 999px;
+      box-shadow: 0 3px 10px rgba(161,91,212,.12);
+    }
     .divisor { width: 110px; height: 3px; margin: 14px auto 0; border-radius: 3px;
       background: linear-gradient(90deg, transparent, var(--accent2), transparent) }
 
@@ -146,6 +151,7 @@
     .drawer-dados { padding: 6px 20px 2px }
     .drawer-dados label { display: block; font-weight: 700; font-size: 13px; margin: 10px 0 4px }
     .drawer-dados input { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); font: 500 15px inherit; padding: 11px }
+    .drawer-dados .dica { color: var(--muted); font-size: 12px; font-weight: 600; margin: 6px 0 0 }
     .drawer-rodape { padding: 14px 20px calc(16px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line) }
     .drawer-rodape .btn { width: 100%; border: 0; border-radius: 999px; background: #25d366; color: #fff; font: 700 17px inherit; padding: 14px; cursor: pointer }
 
@@ -168,6 +174,7 @@
       <img class="logo" id="logo" src="logo.png" alt="Encanto de Sabores">
       <h1 class="titulo">Encanto de Sabores</h1>
       <p class="tag">✨ Doces & Salgados feitos com carinho</p>
+      <div class="aviso-retirada">🛵 Apenas retirada no local ou motoboy por conta do cliente</div>
       <div class="divisor"></div>
     </header>
 
@@ -230,6 +237,7 @@
 
     <div class="info">
       <p>✨ Monte seu pedido e chame no WhatsApp!</p>
+      <p>🛵 Trabalhamos apenas com retirada no local ou motoboy por conta do cliente</p>
       <p id="insta-wrap" style="display:none">Instagram: <a id="insta-link" href="#" target="_blank" rel="noopener"></a></p>
       <a class="zap" id="zap-link" href="#" target="_blank" rel="noopener">💬 Pedir no WhatsApp</a>
     </div>
@@ -250,10 +258,11 @@
       <input id="c-nome" type="text" placeholder="Nome completo">
       <label for="c-tel">Telefone / WhatsApp</label>
       <input id="c-tel" type="tel" placeholder="(00) 90000-0000">
-      <label for="c-end">Endereço de entrega</label>
-      <input id="c-end" type="text" placeholder="Rua, número, bairro, referência">
+      <label for="c-end">Retirada ou motoboy?</label>
+      <input id="c-end" type="text" placeholder="Ex: vou retirar / vou mandar motoboy">
+      <p class="dica">🛵 Só retirada no local ou motoboy por conta do cliente (não entregamos).</p>
       <label for="c-obs">Observações (opcional)</label>
-      <input id="c-obs" type="text" placeholder="Ex: ponto de referência, forma de pagamento...">
+      <input id="c-obs" type="text" placeholder="Ex: horário, forma de pagamento...">
     </div>
     <div class="drawer-rodape">
       <button class="btn" id="finalizar">Enviar pedido no WhatsApp</button>
@@ -480,7 +489,7 @@
       msg += "\n\nTotal: " + t + " iten" + (t > 1 ? "s" : "") + " = " + fmt(totalValor());
       if (nome) msg += "\nNome: " + nome;
       if (tel) msg += "\nTelefone: " + tel;
-      if (end) msg += "\nEndereço: " + end;
+      if (end) msg += "\nRetirada/Motoboy: " + end;
       if (obs) msg += "\nObservações: " + obs;
       if (PIX_CHAVE) msg += "\n\n💳 Pagamento via Pix\nChave: " + PIX_CHAVE + "\nTitular: " + PIX_TITULAR;
       window.open("https://wa.me/" + WHATS + "?text=" + encodeURIComponent(msg), "_blank");
