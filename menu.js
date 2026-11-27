@@ -12,8 +12,8 @@ var data = {
   ],
   salgados: [
     ["Tapioca de frango com cream cheese", "", 18, "Captura%20de%20tela%202026-11-26%20212737.png"],
-    ["Croissant de frango com requeijão", "", 16, "Captura%20de%20tela%202026-11-26%20212535.png"],
-    ["Pão de queijo", "unidade", 6, "Captura%20de%20tela%202026-11-26%20212524.png"]
+    ["Croissant de frango com requeijão", "", 16, "Captura%20de%20tela%202026-11-26%20212524.png"],
+    ["Pão de queijo", "unidade", 6, "Captura%20de%20tela%202026-11-26%20212535.png"]
   ],
   brownie: [
     ["Brownie Nutella com Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212634.png"],
