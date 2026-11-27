@@ -18,7 +18,7 @@ var data = {
   brownie: [
     ["Brownie Nutella com Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212634.png"],
     ["Brownie Ninho, Nutella e Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212646.png"],
-    ["Brownie Ninho com Nutella", "", 16],
+    ["Brownie Ninho com Nutella", "", 16, "Captura%20de%20tela%202026-11-26%20212803.png"],
     ["Brownie Biscoff", "", 18],
     ["Brownie Pistache", "", 18],
     ["Brownie Kinder Bueno", "", 16]
