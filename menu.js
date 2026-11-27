@@ -26,7 +26,7 @@ var data = {
     ["Fatia de Brownie com Biscoff", "fatia generosa", 25, "Captura%20de%20tela%202026-11-26%20212601.png"]
   ],
   brookies: [
-    ["Brookie", "brownie + cookie 😍", 21.90]
+    ["Brookie", "brownie + cookie 😍", 21.90, "Captura%20de%20tela%202026-11-26%20212707.png"]
   ],
   box: [
     ["Box 9 Brownies", "9 brownies sortidos • embalagem presenteável", 130, "Captura%20de%20tela%202026-11-26%20223639.png"],
