@@ -45,5 +45,8 @@ var data = {
     ["Copo Merengue de Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212656.png"],
     ["Copo Bombom de Morango", "", 18],
     ["Copo Bombom de Uva", "", 18]
+  ],
+  bebidas: [
+    ["Refri lata", "consultar disponibilidade no WhatsApp 💬", 8]
   ]
 };
