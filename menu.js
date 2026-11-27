@@ -17,7 +17,7 @@ var data = {
   ],
   croissantdoce: [
     ["Croissant de Nutella", "", 18, "Captura%20de%20tela%202026-11-26%20212722.png"],
-    ["Croissant de Nutella com Morango", "", 18]
+    ["Croissant de Nutella com Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212545.png"]
   ],
   brownie: [
     ["Brownie Nutella com Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212634.png"],
