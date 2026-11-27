@@ -16,7 +16,7 @@ var data = {
     ["Pão de queijo", "unidade", 6, "Captura%20de%20tela%202026-11-26%20212737.png"]
   ],
   brownie: [
-    ["Brownie Nutella com Morango", "", 18],
+    ["Brownie Nutella com Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212634.png"],
     ["Brownie Ninho, Nutella e Morango", "", 18],
     ["Brownie Ninho com Nutella", "", 16],
     ["Brownie Biscoff", "", 18],
