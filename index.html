@@ -89,6 +89,17 @@
     .item .desc { color: var(--muted); font-size: 13px }
     .item .desc b { color: var(--accent); font-weight: 800 }
 
+    /* card grande estilo box */
+    .boxcard { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(161,91,212,.12) }
+    .boxcard .box-foto { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; cursor: pointer; background: #faf3fd }
+    .boxcard .box-corpo { display: grid; grid-template-columns: 1fr 1.2fr; gap: 0 }
+    .boxcard .box-esq { background: linear-gradient(160deg, #fbe9f3, #f3dcf2); padding: 16px 14px; text-align: center; display: flex; flex-direction: column; justify-content: center }
+    .boxcard .box-nome { font-family: 'Pacifico', cursive; font-size: 24px; color: var(--accent); line-height: 1.1 }
+    .boxcard .box-preco { color: var(--accent2); font-weight: 800; font-size: 22px; margin-top: 6px }
+    .boxcard .box-dir { padding: 16px 16px; display: flex; flex-direction: column; justify-content: center; gap: 12px }
+    .boxcard .box-desc { color: var(--ink); font-weight: 600; font-size: 14px }
+    .boxcard .q { justify-content: flex-start }
+
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease }
     .reveal.show { opacity: 1; transform: none }
 
@@ -181,6 +192,10 @@
     <div class="cat-wrap"><div class="cat">🍫 Brownie</div></div>
     <p class="cat-nota">Fofinho por dentro, irresistível 😍</p>
     <div id="brownie"></div>
+
+    <div class="cat-wrap"><div class="cat">📦 Brownie Box</div></div>
+    <p class="cat-nota">Caixas presenteáveis, sabores sortidos 🎁</p>
+    <div id="box"></div>
 
     <div class="cat-wrap"><div class="cat">🥤 Copo da Felicidade</div></div>
     <p class="cat-nota">Pura felicidade em cada colherada ✨</p>
@@ -318,10 +333,46 @@
         box.appendChild(card);
       });
     }
+
+    function renderBox(id, cat, list) {
+      var box = document.getElementById(id);
+      if (!box || !list) return;
+      list.forEach(function (it, i) {
+        var n = it[0], desc = it[1] || "", preco = it[2], img = it[3] || "";
+        var key = keyOf(cat, i);
+        var card = document.createElement("div"); card.className = "boxcard reveal";
+        if (img) {
+          var im = document.createElement("img"); im.className = "box-foto"; im.src = img; im.alt = n; im.loading = "lazy";
+          im.onclick = function () { abrirImagem(img); };
+          card.appendChild(im);
+        }
+        var corpo = document.createElement("div"); corpo.className = "box-corpo";
+        var bEsq = document.createElement("div"); bEsq.className = "box-esq";
+        var bn = document.createElement("div"); bn.className = "box-nome"; bn.textContent = n;
+        var bp = document.createElement("div"); bp.className = "box-preco"; bp.textContent = "R$ " + preco + ",00";
+        bEsq.append(bn, bp);
+        var bDir = document.createElement("div"); bDir.className = "box-dir";
+        var bd = document.createElement("div"); bd.className = "box-desc"; bd.textContent = desc;
+        var q = document.createElement("div"); q.className = "q";
+        var minus = document.createElement("button"); minus.textContent = "−"; minus.hidden = true;
+        var out = document.createElement("output"); out.hidden = true;
+        var plus = document.createElement("button"); plus.textContent = "+"; plus.className = "add";
+        function upd() { var c = qty[key] ? qty[key].n : 0; minus.hidden = out.hidden = !c; out.textContent = c; sync(); }
+        plus.onclick = function () { if (!qty[key]) qty[key] = { nome: n, sub: "", preco: preco, n: 0 }; qty[key].n++; upd(); };
+        minus.onclick = function () { if (qty[key]) { qty[key].n--; if (qty[key].n <= 0) delete qty[key]; } upd(); };
+        q.append(minus, out, plus);
+        bDir.append(bd, q);
+        corpo.append(bEsq, bDir);
+        card.appendChild(corpo);
+        box.appendChild(card);
+      });
+    }
+
     render("cuscuz", "cuscuz", data.cuscuz);
     render("coxinha", "coxinha", data.coxinha);
     render("salgados", "salgados", data.salgados);
     render("brownie", "brownie", data.brownie);
+    renderBox("box", "box", data.box);
     render("copos", "copos", data.copos);
 
     (function () {
