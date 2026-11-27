@@ -20,7 +20,7 @@ var data = {
     ["Brownie Ninho, Nutella e Morango", "", 18, "Captura%20de%20tela%202026-11-26%20212646.png"],
     ["Brownie Ninho com Nutella", "", 16, "Captura%20de%20tela%202026-11-26%20212803.png"],
     ["Brownie Biscoff", "", 18, "Captura%20de%20tela%202026-11-26%20212815.png"],
-    ["Brownie Pistache", "", 18],
+    ["Brownie Pistache", "", 18, "Captura%20de%20tela%202026-11-26%20212825.png"],
     ["Brownie Kinder Bueno", "", 16]
   ],
   copos: [
