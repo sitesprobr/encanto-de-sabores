@@ -13,7 +13,7 @@ var data = {
   copos: [
     ["Copo Ferrero", "", 18, "Captura%20de%20tela%202026-11-26%20212313.png"],
     ["Copo Tropical", "", 16, "Captura%20de%20tela%202026-11-26%20212326.png"],
-    ["Copo Crunch Cake", "", 16],
+    ["Copo Crunch Cake", "", 16, "Captura%20de%20tela%202026-11-26%20212340.png"],
     ["Copo Pavetone", "", 16],
     ["Copo Kinder com Morango", "", 18],
     ["Copo Kinder", "", 18],
